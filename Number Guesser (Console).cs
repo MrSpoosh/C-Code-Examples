@@ -16,10 +16,12 @@ namespace Project
 
             Random rand = new Random();
             int pickedNumber = rand.Next(min, max+1);
+            Console.WriteLine("Pick a random number between "+min+" & "+max);
 
             while (true) {
-                Console.WriteLine("Pick a random number between "+min+" & "+max);
                 string input = Console.ReadLine();
+                if (input == "/c") {Console.WriteLine("The number was "+pickedNumber); break;}
+
                 int guess = Convert.ToInt16(input);
 
                 if (guess > pickedNumber) {
